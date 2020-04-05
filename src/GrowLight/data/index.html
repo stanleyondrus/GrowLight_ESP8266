@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
+  <title>GrowBox</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="img/touch-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="144x144"  href="img/favicon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="img/favicon.ico">
+  <link rel="manifest" href="js/manifest.json">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"> <img src="img/favicon.ico" class="icon"> GrowBox</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="http://stanleyprojects.com">Info</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>GrowBox</h1>
+      <p class="lead">by StanleyProjects.com</p>
+    </div>
+  </header>
+
+  <section id="section-mode-select">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Mode</h2>
+          <p class="lead"></p>
+          <button class="btn btn-outline-secondary btn-lg btn_mode_select" id="M1">Manual</button>
+          <button class="btn btn-outline-secondary btn-lg btn_mode_select" id="M2">Automatic</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-timer" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Timer</h2>
+
+          <div class="row">
+            <div class="col-lg-7 mx-auto">
+              <div id="timepicker"></div>
+            </div>
+
+            <div class="col-lg-5 mx-auto my-auto">
+              <h4 style="display: inline;">Current time: </h4>
+              <div style="display: inline;" class="time_text" id="current_time">xx:xx:xx</div>
+              <input data-prefix="GMT+" id="gmt_select" type="number" value="2" min="-12" max="12" step="1"/>
+            </br>
+              <h4 style="display: inline;">Start time: </h4>
+              <div style="display: inline;" id="start_time" class="time_text graph-left"></div>
+              </br>
+              <h4 style="display: inline;">End time: </h4>
+              <div style="display: inline;" id="end_time" class="time_text graph-right"></div>
+              </br>
+              <h4 style="display: inline;">Duration: </h4>
+              <div style="display: inline;" id="duration" class="time_text graph-center"></div>
+              <br><br>
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input timer-relay-switch" id="TR1">
+                <label class="custom-control-label" for="TR1">Relay 1</label>
+              </div>
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input timer-relay-switch" id="TR2">
+                <label class="custom-control-label" for="TR2">Relay 2</label>
+              </div>
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input timer-relay-switch" id="TR3">
+                <label class="custom-control-label" for="TR3">Relay 3</label>
+              </div>
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input timer-relay-switch" id="TR4">
+                <label class="custom-control-label" for="TR4">Relay 4</label>
+              </div>
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-settings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Relay Control</h2>
+            <div>
+              <button id="1" class="btn btn-outline-secondary btn-lg btn_relay">Relay 1</button>
+              <button id="2" class="btn btn-outline-secondary btn-lg btn_relay">Relay 2</button>
+              <button id="3" class="btn btn-outline-secondary btn-lg btn_relay">Relay 3</button>
+              <button id="4" class="btn btn-outline-secondary btn-lg btn_relay">Relay 4</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; <a href="http://stanleyprojects.com">StanleyProjects.com</a></p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="js/timepicker.js"></script>
+  <script src="js/bootstrap-input-spinner.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
