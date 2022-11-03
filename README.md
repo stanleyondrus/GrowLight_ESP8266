@@ -20,29 +20,35 @@ This project is designed to work with [4-channel relay module](http://www.icstat
 
 ![](doc/img/relaymodule.png)
 
-0. Make sure that [ESP8266 Core](https://github.com/esp8266/Arduino) is installed in your Arduino IDE. 
-1. Open __src\GrowLight\GrowLight.ino__
-2. Customize SSID and PWD for STA mode:
+## How to build your own release
+### Prerequisites
+- Visual Studio Code with PlatformIO extension
+### Building
+1. Open __*src/GrowLight*__ folder in VSCode
+2. In __*src/GrowLight/src/main.cpp*__ you can customize three SSIDs and PASSWORDs for Wi-Fi STA mode:
 ```cpp
-wifiMulti.addAP("ssid_from_AP_1", "your_password_for_AP_1");
-wifiMulti.addAP("ssid_from_AP_2", "your_password_for_AP_2");
-wifiMulti.addAP("ssid_from_AP_3", "your_password_for_AP_3");
-```
-3. Customize SSID and PWD for AP mode:
-```cpp
-const char *ssid = "GrowBox";
-const char *password = "GrowBox2020";
-```
-4. Set board settings
+const char* ssid = "<your_ssid>";
+const char* password = "<your_pass>";
 
-![](doc/img/arduino_upload_settings.png)
+const char* ssid1 = "<your_ssid1>";
+const char* password1 = "<your_pass1>";
 
-5. Compile and upload the code
-6. Upload webserver to SPIFFS using Tools/__ESP8266 Sketch Data Upload__
+const char* ssid2 = "<your_ssid2>";
+const char* password2 = "<your_pass2>";
+```
+3. In __*src/GrowLight/platformio.ini*__ set the correct *_upload_port_*, or remove to auto-detect.
+
+4. Build and upload the filesystem
+    - PlatformIO > esp01_1m > Platform > Build Filesystem Image
+    - PlatformIO > esp01_1m > Platform > Upload Filesystem Image
+
+5. Build and upload the firmware
+    - PlatformIO > esp01_1m > General > Upload
 
 ## Credits
 - [A Beginner's Guide to the ESP8266](https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html)
-- [WebSocket Server and Client for Arduino](https://github.com/Links2004/arduinoWebSockets)
+- [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
 - [NTPClient](https://github.com/arduino-libraries/NTPClient)
+- [AsyncElegantOTA](https://github.com/ayushsharma82/AsyncElegantOTA)
 - [Time Range Wheel Slider (Circular Knob Slider)](https://github.com/jpweinerdev/timerangewheelslider)
 
