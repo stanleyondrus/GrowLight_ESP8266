@@ -1,25 +1,25 @@
 var DEBUG = 0;
 
-(function($) {
-  "use strict"; // Start of use strict
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
-    $('.navbar-collapse').collapse('hide');
-  });
+// (function($) {
+//   "use strict"; // Start of use strict
+//   // Closes responsive menu when a scroll trigger link is clicked
+//   // $('.js-scroll-trigger').click(function() {
+//   //   $('.navbar-collapse').collapse('hide');
+//   // });
 
-  // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#mainNav',
-    offset: 56
-  });
-})(jQuery); // End of use strict
+//   // // Activate scrollspy to add active class to navbar items on scroll
+//   // $('body').scrollspy({
+//   //   target: '#mainNav',
+//   //   offset: 56
+//   // });
+// })(jQuery); // End of use strict
 
 var connection;
 if (DEBUG==1) connection = new WebSocket("wss://echo.websocket.org");
-else connection = new WebSocket('ws://' + location.hostname + ':81', ['arduino']);
+else connection = new WebSocket('ws://' + location.hostname + '/ws');
 
 connection.onopen = function () {
-  connection.send('Connect ' + new Date());
+  // connection.send('Connect ' + new Date());
   connection.send("~");
 };
 connection.onerror = function (error) {
@@ -108,6 +108,8 @@ function processData(data) {
    var id = data.charAt(1);
 
     if (id == 'C') {
+      // var date = new Date(parseInt(data.substring(2)) * 1000);
+      // document.getElementById("current_time").innerHTML = date.toLocaleString('en-GB');
       document.getElementById("current_time").innerHTML = data.substring(2);
     }
     else if (id == 'T') {

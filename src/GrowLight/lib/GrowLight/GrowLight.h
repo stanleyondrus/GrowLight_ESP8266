@@ -1,8 +1,8 @@
 #ifndef GROWLIGHT_LIB_H
 #define GROWLIGHT_LIB_H
 #include <Arduino.h>
-#include "NTPClient.h"
-#include "RelayDriver.h"
+#include <NTPClient.h>
+#include "../RelayDriver/RelayDriver.h"
 
 struct timer {
 	uint8_t startTime[2]; // [min,sec]

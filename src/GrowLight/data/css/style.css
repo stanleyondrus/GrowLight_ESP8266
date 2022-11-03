@@ -1,5 +1,10 @@
 header {
-  padding: 100px 0 40px;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 3px;
+  margin-bottom: 20px;
+  color: white;
+  background-image: radial-gradient(#2ce34e, #1c9134);
 }
 
 section {

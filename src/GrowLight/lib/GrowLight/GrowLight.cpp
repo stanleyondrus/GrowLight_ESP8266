@@ -20,7 +20,7 @@ void GrowBox::setTimeOffset(int8_t t) {
 	timeOffset = t;
 	time.setTimeOffset(timeOffset * 3600);
 }
-
+	
 uint8_t GrowBox::update() {
 	if (millis() - relayLastCheck < relayCheckInterval || mode == 1) return 0;
 	relayLastCheck = millis();

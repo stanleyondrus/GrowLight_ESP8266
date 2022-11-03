@@ -1,8 +1,8 @@
 {
- "name": "LED Control",
+ "name": "GrowLight",
  "icons": [
   {
-   "src": "\/favicon-144x144.png",
+   "src": "\/img\/favicon.png",
    "sizes": "144x144",
    "type": "image\/png",
    "density": "3.0"
